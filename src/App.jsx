@@ -10,8 +10,11 @@ import SuperMarket from './Components/SuperMarket/SuperMarket'
 import { useState } from 'react'
 
 const App = () => {
-
   const [cash, setCash] = useState (100)
+
+  const handleExchange = (amt) => {
+    // setCash() will be useful here
+}
 
   return (
     <>

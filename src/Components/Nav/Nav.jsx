@@ -9,7 +9,7 @@ const Nav = (props) => {
       <NavLink id="logo"  to="/">Landing</NavLink>
       <NavLink to="/burgers">BurgerShop</NavLink>
       <NavLink to="/market">SuperMarket</NavLink>
-      <NavLink to="/wallet">{props.cash}</NavLink>
+      <NavLink to="/wallet">Cash: ${props.cash}</NavLink>
 
     </nav>
   )
