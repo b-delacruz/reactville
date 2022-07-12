@@ -1,4 +1,3 @@
-import { ingredients } from "../../data/burger-data"
 import Ingredient from "./Ingredient"
 
 const IngredientList = (props) => {
@@ -10,6 +9,7 @@ const IngredientList = (props) => {
 				key={idx}
 				isList={true}
 				ingredient={ingredient}
+				addToBurger={props.addToBurger}
 				/>
 			)}
 		</ul>

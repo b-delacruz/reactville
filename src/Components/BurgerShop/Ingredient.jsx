@@ -4,8 +4,8 @@ const Ingredient = (props) => {
 		<li>
 			{props.ingredient.name}
 			{props.isList
-				?<button>+</button>
-				:<button>X</button>
+				?<button onClick={() => props.addToBurger(props.ingredient)}>+</button>
+				:<button onClick={() => props.removeFromBurger(props.idx)}>X</button>
 			}
 		</li>
 	)
