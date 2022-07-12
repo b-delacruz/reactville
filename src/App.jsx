@@ -7,11 +7,15 @@ import Nav from './Components/Nav/Nav'
 import Landing from './Components/Landing/Landing'
 import BurgerShop from './Components/BurgerShop/BurgerShop'
 import SuperMarket from './Components/SuperMarket/SuperMarket'
+import { useState } from 'react'
 
 const App = () => {
+
+  const [cash, setCash] = useState (100)
+
   return (
     <>
-      <Nav/>
+      <Nav cash={cash}/>
       <main>
         <Routes>
           <Route path='/' element={<Landing />} />
