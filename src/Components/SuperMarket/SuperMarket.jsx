@@ -16,7 +16,10 @@ const SuperMarket = () => {
     <div className="super-market">
       <section>
         <MarketNav products={products}/>
-        <DisplayProducts/> 
+        <DisplayProducts 
+        products={products}
+        productCategory={productCategory}
+        /> 
       </section>
 
         <Cart/> 
