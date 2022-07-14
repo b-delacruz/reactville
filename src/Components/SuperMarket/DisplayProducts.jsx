@@ -1,11 +1,17 @@
+import Product from './Product'
 
-const DisplayProducts = () => {
+const DisplayProducts = (props) => {
   
+
   return (
     <div className="product-list">
-      Use the map function and Product component here
+     {props.products.map((product,idx) => {
+      if (product.category === props.productCategory) {
+        return <Product key={idx} product={product}/>}
+    })}
     </div>
   )
 }
 
 export default DisplayProducts
+
