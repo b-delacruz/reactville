@@ -7,7 +7,11 @@ const DisplayProducts = (props) => {
     <div className="product-list">
      {props.products.map((product,idx) => {
       if (product.category === props.productCategory) {
-        return <Product key={idx} product={product}/>}
+        return <Product
+        key={idx} 
+        product={product}
+        addToCart={props.addToCart}
+        />}
     })}
     </div>
   )
