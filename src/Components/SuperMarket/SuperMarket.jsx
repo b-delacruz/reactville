@@ -6,9 +6,9 @@ import { products } from '../../data/market-data'
 import MarketNav from './MarketNav'
 import DisplayProducts from './DisplayProducts'
 import Cart from './Cart'
-import CartItem from './CartItem'
 
-const SuperMarket = () => {
+
+const SuperMarket = (props) => {
   const [cart, setCart] = useState([])
   const [productCategory, setProductCategory] = useState('Produce')
 
@@ -24,7 +24,19 @@ const SuperMarket = () => {
     }
   }
 
+  const removeFromCart = (item) => {
+    if (item.quantity > 1) {
+      setCart(cart.map((prod) => prod.id === item.id
+        ? { ...item, quantity: item.quantity - 1 }
+        : prod
+      ))
+    } else {
+      setCart(cart.filter((prod) => prod.id !== item.id))
+    }
+  }
+
   console.log('Imported product data:::', products, productCategory)
+
   return (
     <div className="super-market">
       <section>
@@ -39,7 +51,12 @@ const SuperMarket = () => {
         /> 
       </section>
 
-        <Cart cart={cart}/> 
+        <Cart 
+        cart={cart}
+        removeFromCart={removeFromCart}
+        setCart={setCart}
+        handleExchange={props.handleExchange}
+        /> 
 
     </div>
   )

@@ -13,17 +13,20 @@ const App = () => {
   const [cash, setCash] = useState (100)
 
   const handleExchange = (amt) => {
-    // setCash() will be useful here
-}
+    if (cash - amt > 0) setCash((cash - amt).toFixed(2))
+  }
 
   return (
     <>
       <Nav cash={cash}/>
       <main>
         <Routes>
-          <Route path='/' element={<Landing />} />
-          <Route path='/burgers' element={<BurgerShop />} />
-          <Route path='/market' element={<SuperMarket />} />
+          <Route path='/' 
+            element={<Landing />} />
+          <Route path='/burgers' 
+            element={<BurgerShop />} />
+          <Route path='/market' 
+            element={<SuperMarket handleExchange={handleExchange} />} />
         </Routes>
       </main>
     </>
